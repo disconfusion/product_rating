@@ -1,0 +1,14 @@
+<div class="container mx-auto mt-2 grid grid-cols-2 md:grid-cols-4 gap-5">
+    <div *ngFor="let prodotto of listaProdotti" class="grid gap-4">
+        <div>
+            <h1 class="bg-black text-white text-center p-1">{{prodotto.category | uppercase}}</h1>
+
+            <h2 class="text-2xl">{{prodotto.title}}</h2>
+            <h3 class="my-2">{{prodotto.price | currency: 'EUR'}}</h3>
+            <h4 class="my-4">{{prodotto.description}}</h4>
+            <h5>{{prodotto.rating.rate}}</h5>
+
+            <img *ngIf="prodotto.rating.rate > 3" class="h-auto max-w-full rounded-lg" [src]="prodotto.image" alt="">
+        </div>
+    </div>
+</div>
